@@ -1,1 +1,1 @@
-conflict remote
+conflict remote resolved
