@@ -1,0 +1,430 @@
+Antonio@Antonio MINGW64 ~
+$ cd D:\00_PROJECTS
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS
+$ git config --global Antonio5410
+error: key does not contain a section: Antonio5410
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS
+$ git config --global  --list
+user.email=mesarosantonio@yahoo.com
+user.name=Antonio5410
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS
+$ mkdir first
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS
+$ cd first
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first
+$ touch new.txt
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first
+$ git init
+Initialized empty Git repository in D:/00_PROJECTS/first/.git/
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (master)
+$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/oinot/.ssh/id_ed25519):
+Created directory '/c/Users/oinot/.ssh'.
+Enter passphrase for "/c/Users/oinot/.ssh/id_ed25519" (empty for no passphras
+Enter same passphrase again:
+Your identification has been saved in /c/Users/oinot/.ssh/id_ed25519
+Your public key has been saved in /c/Users/oinot/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:p034bUnsM0lUZcpJRJGNIqm20FohE8l647YXCZg4I4w Antonio@Antonio
+The key's randomart image is:
++--[ED25519 256]--+
+|     ..o   . o**o|
+|      = . o .+o+.|
+|o  . + + o ...+  |
+|E.+ + = =. o     |
+| . o o BSoo +    |
+|      + +* = o   |
+|     . ...o O    |
+|      . .  . o   |
+|       .         |
++----[SHA256]-----+
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (master)
+$ ^C
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (master)
+$ git add new.txt
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   new.txt
+
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (master)
+$ git commit -m "first file commit"
+[master (root-commit) 1242f14] first file commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new.txt
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (master)
+$ git branch -M main
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git branch -l
+* main
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git branch feature1
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git branch -l
+  feature1
+* main
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git checkout feature1
+Switched to branch 'feature1'
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (feature1)
+$ git branch -l
+* feature1
+  main
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (feature1)
+$ git checkout main
+Switched to branch 'main'
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git branch -l
+  feature1
+* main
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git remote add origin https://github.com/Antonio5410/first.git
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 213 bytes | 213.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Antonio5410/first.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 972 bytes | 38.00 KiB/s, done.
+From https://github.com/Antonio5410/first
+   1242f14..0286cd4  main       -> origin/main
+Updating 1242f14..0286cd4
+Fast-forward
+ stranger | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 stranger
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git add .
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git commit -M "nea text changed"
+error: unknown switch `M'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u[<mode>]] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -t, --[no-]template <file>
+                          use specified template file
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes
+    -o, --[no-]only       commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git commit -m "new text changed"
+[main 0c340e4] new text changed
+ 1 file changed, 1 insertion(+)
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git push
+To https://github.com/Antonio5410/first.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Antonio5410/first.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 962 bytes | 48.00 KiB/s, done.
+From https://github.com/Antonio5410/first
+   0286cd4..cc44e57  main       -> origin/main
+Auto-merging new.txt
+CONFLICT (content): Merge conflict in new.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main|MERGING)
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   new.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main|MERGING)
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   new.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main|MERGING)
+$ git add .
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main|MERGING)
+$ git commit -m "merged conflict"
+[main 0306848] merged conflict
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 582 bytes | 582.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Antonio5410/first.git
+   cc44e57..0306848  main -> main
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git branch newFeature
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git sttaus
+git: 'sttaus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (main)
+$ git checkout newFeature
+Switched to branch 'newFeature'
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git status
+On branch newFeature
+nothing to commit, working tree clean
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git status
+On branch newFeature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stranger
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git add .
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git status
+On branch newFeature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   stranger
+
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git status
+On branch newFeature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   stranger
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stranger
+
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git restore stranger
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git status
+On branch newFeature
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   stranger
+
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git restore --staged stranger
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git status
+On branch newFeature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stranger
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git restore stranger
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git sttaus
+git: 'sttaus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
+$ git status
+On branch newFeature
+nothing to commit, working tree clean
+
+Antonio@Antonio MINGW64 /d/00_PROJECTS/first (newFeature)
